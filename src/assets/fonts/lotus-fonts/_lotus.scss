@@ -1,0 +1,23 @@
+// Available weights for `Lotus`: 400, 700
+$LOTUS_REGULAR_PATH: './lotus-regular';
+$LOTUS_BOLD_PATH: './lotus-bold';
+@font-face {
+	font-family: 'lotus-regular';
+	src: url('#{$LOTUS_REGULAR_PATH}.eot');
+	src: url('#{$LOTUS_REGULAR_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$LOTUS_REGULAR_PATH}.woff2') format('woff2'),
+		url('#{$LOTUS_REGULAR_PATH}.woff') format('woff'),
+		url('#{$LOTUS_REGULAR_PATH}.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'lotus-bold';
+	src: url('#{$LOTUS_BOLD_PATH}.eot');
+	src: url('#{$LOTUS_BOLD_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$LOTUS_BOLD_PATH}.woff2') format('woff2'),
+		url('#{$LOTUS_BOLD_PATH}.woff') format('woff'),
+		url('#{$LOTUS_BOLD_PATH}.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}

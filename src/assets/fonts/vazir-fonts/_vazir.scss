@@ -1,0 +1,67 @@
+// Available weights for `Vazir`: 100, 300, 400, 500, 700, 900
+$VAZIR_THIN_PATH: './vazir-thin/vazir-thin';
+$VAZIR_LIGHT_PATH: './vazir-light/vazir-light';
+$VAZIR_REGULAR_PATH: './vazir-regular/vazir-regular';
+$VAZIR_MEDIUM_PATH: './vazir-medium/vazir-medium';
+$VAZIR_BOLD_PATH: './vazir-bold/vazir-bold';
+$VAZIR_BLACK_PATH: './vazir-black/vazir-black';
+@font-face {
+	font-family: 'vazir-thin';
+	src: url('#{$VAZIR_THIN_PATH}.eot');
+	src: url('#{$VAZIR_THIN_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_THIN_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_THIN_PATH}.woff') format('woff'),
+		url('#{$VAZIR_THIN_PATH}.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'vazir-light';
+	src: url('#{$VAZIR_LIGHT_PATH}.eot');
+	src: url('#{$VAZIR_LIGHT_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_LIGHT_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_LIGHT_PATH}.woff') format('woff'),
+		url('#{$VAZIR_LIGHT_PATH}.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'vazir-regular';
+	src: url('#{$VAZIR_REGULAR_PATH}.eot');
+	src: url('#{$VAZIR_REGULAR_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_REGULAR_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_REGULAR_PATH}.woff') format('woff'),
+		url('#{$VAZIR_REGULAR_PATH}.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'vazir-medium';
+	src: url('#{$VAZIR_MEDIUM_PATH}.eot');
+	src: url('#{$VAZIR_MEDIUM_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_MEDIUM_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_MEDIUM_PATH}.woff') format('woff'),
+		url('#{$VAZIR_MEDIUM_PATH}.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'vazir-bold';
+	src: url('#{$VAZIR_BOLD_PATH}.eot');
+	src: url('#{$VAZIR_BOLD_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_BOLD_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_BOLD_PATH}.woff') format('woff'),
+		url('#{$VAZIR_BOLD_PATH}.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'vazir-black';
+	src: url('#{$VAZIR_BLACK_PATH}.eot');
+	src: url('#{$VAZIR_BLACK_PATH}.2.eot?#iefix') format('embedded-opentype'),
+		url('#{$VAZIR_BLACK_PATH}.woff2') format('woff2'),
+		url('#{$VAZIR_BLACK_PATH}.woff') format('woff'),
+		url('#{$VAZIR_BLACK_PATH}.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
