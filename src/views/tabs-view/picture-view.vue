@@ -71,29 +71,23 @@ export default {
     isExist(file, fileList, key = "name") {
       return !!fileList.find((f) => f[key] === file);
     },
-    async handleUploading(e) {
+    handleUploading(e) {
       const $this = e.target;
-      let files, w;
-      try {
+      let files;
+      let w = window.setTimeout(() => {
         if ($this.tagName === "LABEL") {
-          w = await window.setTimeout(() => {
-            files = $this.previousElementSibling.files;
-          }, 1000);
+          files = $this.previousElementSibling.files;
         } else if ($this.tagName === "INPUT") {
           files = $this.files;
         }
-      } catch (err) {
-        console.log(err);
-        return false;
-      }
-      console.log("hi", files);
-      // files.forEach((file) => {
-      //   let url = URL.createObjectURL(file);
-      //   console.log(file);
-      //   let exist = this.isExist(file.name, this.files.selected);
-      //   if (!exist) this.files.selected.push({ url, name: file.name });
-      // });
-      window.clearTimeout(w);
+        files.forEach((file) => {
+          let url = URL.createObjectURL(file);
+          console.log(file);
+          let exist = this.isExist(file.name, this.files.selected);
+          if (!exist) this.files.selected.push({ url, name: file.name });
+        });
+        window.clearTimeout(w);
+      }, 1000);
     },
     handleRemoveFile(e) {
       let $this = e.target;
