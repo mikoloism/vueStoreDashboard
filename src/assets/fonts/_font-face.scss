@@ -1,4 +1,4 @@
-$LOTUS_FONT_PATH: './lotus-fonts/_lotus.scss';
-$VAZIR_FONT_PATH: './vazir-fonts/_vazir.scss';
-@import url('#{$LOTUS_FONT_PATH}');
-@import url('#{$VAZIR_FONT_PATH}');
+$LOTUS_FONT_PATH: "./lotus-fonts/_lotus.scss";
+$VAZIR_FONT_PATH: "./vazir-fonts/_vazir.scss";
+@import url("#{$LOTUS_FONT_PATH}");
+@import url("#{$VAZIR_FONT_PATH}");

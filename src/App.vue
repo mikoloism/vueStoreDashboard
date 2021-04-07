@@ -1,13 +1,16 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <b-tabs fill> </b-tabs>
+  <b-container id="app">
     <router-view />
-  </div>
+  </b-container>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+};
+</script>
 
 <style lang="scss">
 #app {

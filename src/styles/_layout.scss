@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  z-index: 9;
+}
+
+html,
+body,
+* {
+  font-family: $FONT_VAZIR_REGULAR;
+}
+
+// input[type='button'],
+// input[type='reset'],
+// input[type='submit'],
+// button {
+// 	&,
+// 	&:hover,
+// 	&:active,
+// 	&:focus {
+// 		border: 0;
+// 		outline: none;
+// 		box-shadow: none;
+// 	}
+// }
