@@ -94,6 +94,7 @@ import to from "@/plugins/v-pictures/";
 export default {
   name: "VInputBox",
   components: { VCopy, VImage },
+
   methods: {
     async handleChange(e) {
       const $this = e.target;
@@ -131,9 +132,9 @@ export default {
     },
     async handleSave() {
       let { index, realName, name, src, base64 } = this.caches.file;
-      console.log({ index, realName, name, src, base64 });
       this.saves.files.push({ index, realName, name, src, base64 });
       await this.handleClear();
+      this.trigger();
     },
     handleClear() {
       this.caches.image = null;
@@ -147,6 +148,9 @@ export default {
         base64: "",
         index: this.caches.file.index + 1,
       };
+    },
+    trigger() {
+      this.$emit("change", this.saves.files);
     },
   },
 
@@ -169,54 +173,5 @@ export default {
       },
     };
   },
-
-  watch: {
-    caches: {
-      file: {
-        src(newv, oldv) {
-          if (newv !== oldv && newv)
-            this.caches.file.name = this.caches.file.realName;
-          console.log("[watch]");
-        },
-      },
-    },
-  },
 };
 </script>
-
-<style lang="scss">
-#v-picture {
-  &__file-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    opacity: 0;
-  }
-  &__file-box {
-    position: relative;
-
-    .card-header {
-      cursor: pointer;
-    }
-
-    p {
-      line-height: 3rem;
-    }
-  }
-}
-.v-picture {
-  &__card-footer {
-    &--copy {
-      transform: scale(0.8);
-      height: 2px;
-      padding: 0;
-      margin-top: -10px;
-    }
-  }
-}
-</style>
