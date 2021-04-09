@@ -1,4 +1,5 @@
 import VGeneral from "@/views/tabs-view/general-view.vue";
+import VPrice from "@/views/tabs-view/price-view.vue";
 import VPicture from "@/views/tabs-view/picture-view.vue";
 import VAttribute from "@/views/tabs-view/attribute-view.vue";
 import VCaption from "@/views/tabs-view/caption-view.vue";
@@ -9,7 +10,12 @@ const tabs = [
     icon: `gear`,
     title: "عمومی",
     component: VGeneral,
-    active: false,
+  },
+  {
+    id: 1,
+    icon: `tag`,
+    title: "وضعیت",
+    component: VPrice,
   },
   {
     active: true,
