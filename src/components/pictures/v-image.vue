@@ -4,8 +4,10 @@
     :src="src"
     :alt="name ? name : 'please, wait...'"
     :index="index"
-    block
-    fluid
+    :data-index="index"
+    :data-name="name"
+    :data-real-name="real"
+    :data-virtual-src="src"
     center
     thumbnail
     rounded
@@ -15,7 +17,7 @@
 <script>
 export default {
   name: "VImage",
-  props: ["index", "src", "name"],
+  props: ["index", "src", "name", "real", "value"],
 };
 </script>
 
