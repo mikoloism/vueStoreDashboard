@@ -121,8 +121,16 @@
           </b-form-group>
         </b-row>
 
-        <b-button type="submit" variant="primary">Submit</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
+        <b-btn-group dir="ltr">
+          <b-btn type="submit" variant="primary">
+            <b-icon icon="chevron-double-left" />
+            مرحله بعدی
+          </b-btn>
+          <b-btn type="reset" variant="outline-danger">
+            <b-icon icon="arrow-clockwise" />
+            از نو
+          </b-btn>
+        </b-btn-group>
       </b-form>
 
       <!-- end-from -->
