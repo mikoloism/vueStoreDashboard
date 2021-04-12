@@ -1,4 +1,4 @@
-# vue store dashboard
+# vueStoreDashboard
 ## Project setup
 ```
 npm install
