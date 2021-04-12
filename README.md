@@ -1,5 +1,4 @@
-# store-form
-
+# vue store dashboard
 ## Project setup
 ```
 npm install
