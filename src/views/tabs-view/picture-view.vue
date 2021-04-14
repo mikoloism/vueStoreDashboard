@@ -4,27 +4,14 @@
       <h2>انتخاب تصاویر</h2>
     </b-col>
     <b-col cols="11" class="text-right">
-      <v-input-box @change="this.handleSaveFiles" />
+      <v-input-box @change="this.handleChange" />
     </b-col>
-    <b-col v-if="this.files.length !== 0" cols="11">
-      <v-img-box :files="this.files" />
+    <b-col v-if="this.uploadedFiles.length !== 0" cols="11">
+      <v-img-box :files="this.uploadedFiles" />
     </b-col>
 
     <b-col cols="12">
-      <b-btn-group dir="ltr">
-        <b-btn type="submit" variant="primary">
-          <b-icon icon="chevron-double-left" />
-          مرحله بعدی
-        </b-btn>
-        <b-btn type="reset" variant="outline-danger">
-          <b-icon icon="arrow-clockwise" />
-          از نو
-        </b-btn>
-        <b-btn type="button" variant="outline-secondary">
-          بازگشت
-          <b-icon icon="chevron-double-right" />
-        </b-btn>
-      </b-btn-group>
+      <v-tabs-nav :new="{}" :next="{}" :prev="{}" />
     </b-col>
   </b-row>
 </template>
@@ -32,15 +19,19 @@
 <script>
 import VImgBox from "@/components/pictures/v-image-box";
 import VInputBox from "@/components/pictures/v-input-box";
+import VTabsNav from "@/components/tabs/v-tabs-nav";
 
 export default {
   name: "VPicture",
-  components: { VImgBox, VInputBox },
+  components: { VImgBox, VInputBox, VTabsNav },
 
   methods: {
-    handleSaveFiles(files) {
-      this.files = files;
+    handleChange(files) {
+      this.uploadedFiles = files;
     },
+    // handleSaveFiles(files) {
+    //   this.files = files;
+    // },
     // let $this = this.$refs[`preview_image_${e.target.dataset.index}`][0];
     // console.log($this);
     // if ($this) {
@@ -58,7 +49,7 @@ export default {
 
   data() {
     return {
-      files: [],
+      uploadedFiles: [],
     };
   },
 };
