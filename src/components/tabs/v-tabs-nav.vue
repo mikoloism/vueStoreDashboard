@@ -1,8 +1,8 @@
 <template>
   <b-btn-group dir="ltr">
-    <b-btn v-if="this.next.show || true" type="submit" variant="primary">
+    <b-btn v-if="true" type="submit" variant="primary">
       <b-icon icon="chevron-double-left" />
-      {{ this.next.text || "مرحله بعدی" }}
+      {{ (this.next && this.next.text) || "مرحله بعدی" }}
     </b-btn>
     <b-btn v-if="this.new.show || false">
       <b-icon icon="arrow-clockwise" />
@@ -17,7 +17,26 @@
 
 <script>
 export default {
-  props: ["new", "prev", "next"],
+  props: {
+    new: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+    prev: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+    next: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
 };
 </script>
 
