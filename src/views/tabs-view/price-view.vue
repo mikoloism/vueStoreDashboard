@@ -5,37 +5,11 @@
     </b-col>
     <b-col cols="11" class="text-right">
       <b-form dir="rtl" @submit="onSubmit">
-        <b-form-group label-for="v-general__product--unit">
-          <b-form-input
-            type="text"
-            id="v-general__product--unit"
-            v-model="product.unit"
-            list="v-general__product--unit-list"
-            placeholder="واحد شمارش"
-            required
-          />
-          <template #description>
-            <p>اگر واحد شمارشی مورد نظر یافت نشد، آن را بنویسید</p>
-          </template>
-          <b-datalist
-            :options="builts.units"
-            id="v-general__product--unit-list"
-          />
-        </b-form-group>
-        <b-btn-group dir="ltr">
-          <b-btn type="submit" variant="primary">
-            <b-icon icon="chevron-double-left" />
-            مرحله بعدی
-          </b-btn>
-          <b-btn type="reset" variant="outline-danger">
-            <b-icon icon="arrow-clockwise" />
-            از نو
-          </b-btn>
-          <b-btn type="button" variant="outline-secondary">
-            بازگشت
-            <b-icon icon="chevron-double-right" />
-          </b-btn>
-        </b-btn-group>
+        <v-sell-state />
+        <v-unit-select @change="(value) => (this.product.unit = value)" />
+        <v-quantity />
+        <v-tabs-nav />
+        {{ this.product.unit }}
       </b-form>
     </b-col>
   </b-row>
@@ -43,9 +17,17 @@
 
 <script>
 import builts from "@/store/built.js";
+import vTabsNav from "@/components/tabs/v-tabs-nav.vue";
+import VUnitSelect from "@/components/pricing/v-unit-select.vue";
+import VSellState from "@/components/pricing/v-sell-state.vue";
+import VQuantity from "../../components/pricing/v-quantity.vue";
 export default {
+  components: { vTabsNav, VUnitSelect, VSellState, VQuantity },
   data() {
-    return { builts, product: { unit: "" } };
+    return {
+      builts,
+      product: { unit: "", sellState: false, productState: false },
+    };
   },
   methods: {
     onSubmit() {},
