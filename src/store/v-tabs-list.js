@@ -19,19 +19,19 @@ const tabs = [
   },
   {
     active: true,
-    id: 1,
+    id: 2,
     icon: `images`,
     title: "تصاویر",
     component: VPicture,
   },
   {
-    id: 2,
+    id: 3,
     icon: `check-all`,
     title: "ویژگی ها",
     component: VAttribute,
   },
   {
-    id: 3,
+    id: 4,
     icon: `pencil-square`,
     title: "توضیحات",
     component: VCaption,
