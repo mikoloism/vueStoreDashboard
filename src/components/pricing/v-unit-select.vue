@@ -6,6 +6,7 @@
       v-model="value"
       list="v-general__product--unit-list"
       placeholder="واحد شمارش"
+      :state="state"
       required
     />
     <template #description>
@@ -36,6 +37,11 @@ export default {
           this.trigger(this.value);
         }
       }
+    },
+  },
+  computed: {
+    state({ value }) {
+      return value !== null;
     },
   },
 };
