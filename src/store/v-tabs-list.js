@@ -16,9 +16,9 @@ const tabs = [
     icon: `tag`,
     title: "وضعیت",
     component: VPrice,
+    active: true,
   },
   {
-    active: true,
     id: 2,
     icon: `images`,
     title: "تصاویر",
