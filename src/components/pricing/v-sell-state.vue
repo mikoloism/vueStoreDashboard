@@ -23,11 +23,6 @@
 
 <script>
 export default {
-  methods: {
-    trigger(value) {
-      this.$emit("change", value);
-    },
-  },
   data() {
     return { value: { sellState: false, productState: false } };
   },
@@ -38,6 +33,14 @@ export default {
           this.trigger(this.value);
         }
       }
+    },
+  },
+  methods: {
+    trigger(value) {
+      this.$emit("change", {
+        sell: value.sellState,
+        product: value.productState,
+      });
     },
   },
 };
