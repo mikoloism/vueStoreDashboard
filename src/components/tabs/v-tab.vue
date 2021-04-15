@@ -6,7 +6,7 @@
         <b-icon :icon="icon" />
       </span>
     </template>
-    <v-tab-view :component="component" />
+    <v-tab-view :header="title" :body="component" />
   </b-tab>
 </template>
 
