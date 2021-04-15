@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import VTab from "./v-tab";
+import VTab from "@/components/tabs/v-tab";
 export default {
   name: "VTabs",
   props: ["VTabsList"],
