@@ -5,11 +5,23 @@
   >
     <div class="col-4">
       <div class="row">
-        <b-btn class="col-6" size="sm" variant="link">
+        <!-- TODO: before change step of tab, validate of data -->
+        <!-- goto next step  -->
+        <b-btn
+          @click="nav((step) => step - 1)"
+          class="col-6"
+          size="sm"
+          variant="link"
+        >
           <b-icon icon="chevron-double-left" />
           بعدی
         </b-btn>
-        <b-btn class="col-6" size="sm" variant="link">
+        <b-btn
+          @click="nav((step) => step + 1)"
+          class="col-6"
+          size="sm"
+          variant="link"
+        >
           بازگشت
           <b-icon icon="arrow-right" />
         </b-btn>
@@ -23,5 +35,7 @@
 </template>
 
 <script>
-export default { props: ["header"] };
+export default {
+  props: ["header", "nav"],
+};
 </script>

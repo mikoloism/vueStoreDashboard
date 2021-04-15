@@ -14,6 +14,7 @@
           :title="tab.title"
           :component="tab.component"
           :active="tab.active || false"
+          :nav="navigate"
         />
       </b-tabs>
     </b-col>
@@ -29,6 +30,12 @@ export default {
     return {
       currentTabIndex: 0,
     };
+  },
+  methods: {
+    navigate(callback) {
+      let navStep = callback.call(this, this.currentTabIndex);
+      this.currentTabIndex = navStep;
+    },
   },
   components: { "v-tab": VTab },
 };
