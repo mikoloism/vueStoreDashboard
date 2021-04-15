@@ -5,27 +5,19 @@
     </b-col>
     <b-col cols="11">
       <b-form>
-        <b-btn-group>
-          <b-btn type="submit" variant="primary">
-            <b-icon icon="chevron-double-left" />
-            مرحله بعدی
-          </b-btn>
-          <b-btn type="reset" variant="outline-danger">
-            <b-icon icon="arrow-clockwise" />
-            از نو
-          </b-btn>
-          <b-btn type="button" variant="outline-secondary">
-            بازگشت
-            <b-icon icon="chevron-double-right" />
-          </b-btn>
-        </b-btn-group>
+        <v-input-box />
+        <v-tabs-nav />
       </b-form>
     </b-col>
   </b-row>
 </template>
 
 <script>
-export default {};
+import VTabsNav from "@/components/tabs/v-tabs-nav.vue";
+import VInputBox from "@/components/attributes/v-input-box.vue";
+export default {
+  components: { VTabsNav, VInputBox },
+};
 </script>
 
 <style></style>
