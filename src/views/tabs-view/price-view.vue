@@ -1,8 +1,5 @@
 <template>
   <b-row align-h="center">
-    <b-col class="h2 text-right pr-5 p-3" align-self="start" cols="12">
-      <h2>وضعیت</h2>
-    </b-col>
     <b-col cols="11" class="text-right">
       <b-form dir="rtl" @submit="onSubmit">
         <v-sell-state @change="(v) => (this.product.states = v)" />
