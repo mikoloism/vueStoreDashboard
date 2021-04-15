@@ -1,10 +1,11 @@
 <template>
   <b-row align-h="center">
     <b-col cols="11">
-      <b-form>
-        <v-input-box />
-        <!-- <v-tabs-nav /> -->
-      </b-form>
+      <!-- <b-form> -->
+      <v-input-box />
+      <v-attribute-list />
+      <!-- <v-tabs-nav /> -->
+      <!-- </b-form> -->
     </b-col>
   </b-row>
 </template>

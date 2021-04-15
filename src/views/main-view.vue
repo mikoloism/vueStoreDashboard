@@ -1,5 +1,7 @@
 <template>
-  <v-tabs :v-tabs-list="this.tabs" />
+  <b-form>
+    <v-tabs :v-tabs-list="this.tabs" />
+  </b-form>
 </template>
 
 <script>

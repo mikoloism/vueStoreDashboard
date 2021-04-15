@@ -1,17 +1,17 @@
 <template>
   <b-row align-h="center">
     <b-col cols="11" class="text-right">
-      <b-form dir="rtl" @submit="onSubmit">
-        <v-sell-state @change="(v) => (this.product.states = v)" />
-        <v-unit-select @change="(v) => (this.product.unit = v)" />
-        <v-quantity
-          @min="(n) => (this.product.quantity.min = n)"
-          @max="(x) => (this.product.quantity.max = x)"
-        />
-        <v-exemption @change="(v) => (this.product.exemption = v)" />
-        <!-- <v-tabs-nav /> -->
-        {{ this.product.unit }}
-      </b-form>
+      <!-- <b-form dir="rtl" @submit="onSubmit"> -->
+      <v-sell-state @change="(v) => (this.product.states = v)" />
+      <v-unit-select @change="(v) => (this.product.unit = v)" />
+      <v-quantity
+        @min="(n) => (this.product.quantity.min = n)"
+        @max="(x) => (this.product.quantity.max = x)"
+      />
+      <v-exemption @change="(v) => (this.product.exemption = v)" />
+      <!-- <v-tabs-nav /> -->
+      {{ this.product.unit }}
+      <!-- </b-form> -->
     </b-col>
   </b-row>
 </template>
