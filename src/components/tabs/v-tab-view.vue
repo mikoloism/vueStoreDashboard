@@ -1,9 +1,14 @@
 <template>
-  <component :is="component" />
+  <div>
+    <v-tab-header :header="header" />
+    <component :is="body" />
+  </div>
 </template>
 <script>
+import vTabHeader from "./v-tab-header.vue";
 export default {
+  components: { vTabHeader },
   name: "VTabView",
-  props: ["component"],
+  props: ["header", "body"],
 };
 </script>
