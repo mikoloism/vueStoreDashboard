@@ -7,20 +7,20 @@
       <v-img-box :files="this.uploadedFiles" />
     </b-col>
 
-    <b-col cols="12">
+    <!-- <b-col cols="12">
       <v-tabs-nav :new="{}" :next="{}" :prev="{}" />
-    </b-col>
+    </b-col> -->
   </b-row>
 </template>
 
 <script>
 import VImgBox from "@/components/pictures/v-image-box";
 import VInputBox from "@/components/pictures/v-input-box";
-import VTabsNav from "@/components/tabs/v-tabs-nav";
+// import VTabsNav from "@/components/tabs/v-tabs-nav";
 
 export default {
   name: "VPicture",
-  components: { VImgBox, VInputBox, VTabsNav },
+  components: { VImgBox, VInputBox },
 
   methods: {
     handleChange(files) {
