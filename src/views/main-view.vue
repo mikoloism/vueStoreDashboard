@@ -4,7 +4,7 @@
 
 <script>
 import "@/styles/main.scss";
-import VTabs from "@/components/tabs/v-tabs";
+import VTabs from "@/layouts/v-tabs";
 import VTabsList from "@/store/v-tabs-list.js";
 export default {
   name: "VMain",
