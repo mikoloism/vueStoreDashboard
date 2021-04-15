@@ -16,7 +16,6 @@ const tabs = [
     icon: `tag`,
     title: "وضعیت",
     component: VPrice,
-    active: true,
   },
   {
     id: 2,
@@ -29,6 +28,7 @@ const tabs = [
     icon: `check-all`,
     title: "ویژگی ها",
     component: VAttribute,
+    active: true,
   },
   {
     id: 4,
