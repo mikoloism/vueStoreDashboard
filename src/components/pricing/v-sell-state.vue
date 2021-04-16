@@ -2,7 +2,12 @@
   <b-row>
     <b-col cols="6">
       <b-form-group>
-        <b-form-checkbox v-model="value.sellState" name="sellState" switch>
+        <b-form-checkbox
+          @change="handleSell"
+          v-model="sellState"
+          name="sellState"
+          switch
+        >
           وضعیت فروش
         </b-form-checkbox>
       </b-form-group>
@@ -10,7 +15,8 @@
     <b-col cols="6">
       <b-form-group>
         <b-form-checkbox
-          v-model="value.productState"
+          @change="handleProduct"
+          v-model="productState"
           name="productState"
           switch
         >
@@ -24,23 +30,20 @@
 <script>
 export default {
   data() {
-    return { value: { sellState: false, productState: false } };
-  },
-  watch: {
-    value(news, olds) {
-      if (news !== olds) {
-        if (news) {
-          this.trigger(this.value);
-        }
-      }
-    },
+    return {
+      sellState: false,
+      productState: false,
+    };
   },
   methods: {
-    trigger(value) {
-      this.$emit("change", {
-        sell: value.sellState,
-        product: value.productState,
-      });
+    handleSell() {
+      this.trigger("sellState", this.sellState);
+    },
+    handleProduct() {
+      this.trigger("productState", this.productState);
+    },
+    trigger(prop, value) {
+      this.$emit("change", prop, value);
     },
   },
 };

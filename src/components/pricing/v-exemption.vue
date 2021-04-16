@@ -9,10 +9,11 @@
         :button-variant="value ? 'primary' : 'outline-primary'"
         v-model="value"
         size="sm"
+        @change="handleChange"
       >
         {{ value ? "خریدار" : "فروشنده" }}
-      </b-form-checkbox></label
-    >
+      </b-form-checkbox>
+    </label>
   </b-form-group>
 </template>
 
@@ -21,18 +22,9 @@ export default {
   data() {
     return { value: true };
   },
-  watch: {
-    value(vn, vp) {
-      if (vn !== vp) {
-        if (vn) {
-          this.trigger("change", vn);
-        }
-      }
-    },
-  },
   methods: {
-    trigger(emit, arg) {
-      this.$emit(emit, arg ? "customer" : "seller");
+    handleChange() {
+      this.$emit("change", "exemption", this.value ? "customer" : "seller");
     },
   },
 };

@@ -3,11 +3,12 @@
     <b-form-input
       type="text"
       id="v-general__product--unit"
-      v-model="value"
       list="v-general__product--unit-list"
       placeholder="واحد شمارش"
+      v-model.trim="value"
       :state="state"
-      required
+      @change="handleChange"
+      @input="handleChange"
     />
     <template #description>
       <p>اگر واحد شمارشی مورد نظر یافت نشد، آن را بنویسید</p>
@@ -19,29 +20,24 @@
 <script>
 import builts from "@/store/built";
 export default {
-  methods: {
-    trigger(value) {
-      this.$emit("change", value);
-    },
-  },
   data() {
     return {
-      value: null,
       builts,
+      value: null,
+      state: null,
     };
   },
-  watch: {
-    value(news, olds) {
-      if (news !== olds) {
-        if (news) {
-          this.trigger(this.value);
-        }
-      }
+  methods: {
+    handleChange() {
+      this.state =
+        this.value !== null &&
+        this.value !== "" &&
+        Object.keys(this.value).length !== 0;
+      this.trigger("state", "unit", this.state);
+      this.trigger("change", "unit", this.value);
     },
-  },
-  computed: {
-    state({ value }) {
-      return value !== null;
+    trigger(event, prop, value) {
+      this.$emit(event, prop, value);
     },
   },
 };
