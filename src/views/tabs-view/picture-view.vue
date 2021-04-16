@@ -6,17 +6,12 @@
     <b-col v-if="this.uploadedFiles.length !== 0" cols="11">
       <v-img-box :files="this.uploadedFiles" />
     </b-col>
-
-    <!-- <b-col cols="12">
-      <v-tabs-nav :new="{}" :next="{}" :prev="{}" />
-    </b-col> -->
   </b-row>
 </template>
 
 <script>
 import VImgBox from "@/components/pictures/v-image-box";
 import VInputBox from "@/components/pictures/v-input-box";
-// import VTabsNav from "@/components/tabs/v-tabs-nav";
 
 export default {
   name: "VPicture",
@@ -42,6 +37,10 @@ export default {
     //     this.selected = [...newList];
     //   }
     // }
+
+    handleSubmit() {
+      // this.uploadedFiles.length !== 0 ? state=true : false
+    },
   },
 
   data() {
