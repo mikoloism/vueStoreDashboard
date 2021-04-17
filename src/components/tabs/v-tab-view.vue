@@ -4,7 +4,7 @@
       <v-tab-header class="overflow-hidden" :nav="nav" :header="header" />
     </div>
     <div class="p-3 col-12">
-      <component :is="body" />
+      <component @before-nav="beforeNav" :nav="nav" :is="body" />
     </div>
   </b-row>
 </template>
@@ -13,6 +13,6 @@ import vTabHeader from "./v-tab-header.vue";
 export default {
   components: { vTabHeader },
   name: "VTabView",
-  props: ["header", "body", "nav"],
+  props: ["header", "body", "nav", "beforeNav"],
 };
 </script>

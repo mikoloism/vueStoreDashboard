@@ -1,4 +1,5 @@
 // all `value` is `${id} ${name}`
+// before mount first component, we should create this as first
 
 let category = [
   { text: "دسته بندی ها", value: null },

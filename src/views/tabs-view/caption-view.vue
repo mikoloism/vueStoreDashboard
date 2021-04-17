@@ -4,12 +4,20 @@
       <!-- <b-form> -->
       <!-- <b-wiswyg controller="all" /> -->
       <!-- </b-form> -->
+      <b-btn ref="last-form-btn" variant="primary" @click="handleLastBtn">
+        checkout
+        <b-icon-check />
+      </b-btn>
     </b-col>
   </b-row>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    handleLastBtn() {
+      this.$route.push("/checkout");
+    },
+  },
+};
 </script>
-
-<style></style>

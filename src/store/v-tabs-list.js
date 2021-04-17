@@ -10,6 +10,7 @@ const tabs = [
     icon: `gear`,
     title: "عمومی",
     component: VGeneral,
+    active: true,
   },
   {
     id: 1,
@@ -28,7 +29,6 @@ const tabs = [
     icon: `check-all`,
     title: "ویژگی ها",
     component: VAttribute,
-    active: true,
   },
   {
     id: 4,

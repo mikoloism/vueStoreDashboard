@@ -15,6 +15,7 @@
           :component="tab.component"
           :active="tab.active || false"
           :nav="navigate"
+          :before-nav="befNavigate"
         />
       </b-tabs>
     </b-col>
@@ -28,13 +29,20 @@ export default {
   props: ["VTabsList"],
   data() {
     return {
+      steps: [null, null, null, null, null],
       currentTabIndex: 0,
     };
   },
   methods: {
+    befNavigate(index = 4, value) {
+      this.steps[index] = value;
+    },
     navigate(callback) {
       let navStep = callback.call(this, this.currentTabIndex);
-      this.currentTabIndex = navStep;
+      let canNav =
+        this.steps[this.currentTabIndex] !== false &&
+        this.steps[this.currentTabIndex] !== undefined;
+      if (canNav) this.currentTabIndex = navStep;
     },
   },
   components: { "v-tab": VTab },

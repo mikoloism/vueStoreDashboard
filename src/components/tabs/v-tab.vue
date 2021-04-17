@@ -6,7 +6,12 @@
         <b-icon :icon="icon" />
       </span>
     </template>
-    <v-tab-view :nav="nav" :header="title" :body="component" />
+    <v-tab-view
+      :nav="nav"
+      :before-nav="beforeNav"
+      :header="title"
+      :body="component"
+    />
   </b-tab>
 </template>
 
@@ -14,7 +19,7 @@
 import VTabView from "./v-tab-view";
 export default {
   name: "VTab",
-  props: ["icon", "title", "component", "active", "nav"],
+  props: ["icon", "title", "component", "active", "nav", "beforeNav"],
   components: {
     "v-tab-view": VTabView,
   },
