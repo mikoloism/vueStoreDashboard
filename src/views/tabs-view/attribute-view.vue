@@ -13,7 +13,7 @@
 
 <script>
 import VInputBox from "@/components/attributes/v-input-box.vue";
-import VAttributeList from "@/layouts/attribute/v-attribute-list";
+import VAttributeList from "@/components/attributes/v-attribute-list.vue";
 export default {
   data() {
     return {
